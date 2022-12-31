@@ -17,11 +17,13 @@ const Navigation = () => {
           <Nav className="ms-auto">
             <Nav.Link>
               <Button
-                onClick={() => setShowForm(true)}
+                onClick={() => {
+                  setShowForm(!showForm);
+                }}
                 variant="info"
                 className="rounded-pill"
               >
-                SHARE A FACT
+                {showForm ? 'CLOSE' : 'SHARE A FACT'}
               </Button>
             </Nav.Link>
           </Nav>

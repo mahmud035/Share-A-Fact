@@ -10,8 +10,10 @@ const AddFactForm = ({ showForm, setShowForm }) => {
     handleSubmit,
   } = useForm();
 
-  const handleAddFact = () => {
+  const handleAddFact = (data) => {
     setShowForm(false);
+
+    console.log(data);
   };
 
   return (
@@ -40,7 +42,13 @@ const AddFactForm = ({ showForm, setShowForm }) => {
             </Form.Group>
           </Col>
 
-          <Col lg={4}>
+          <Col lg={1}>
+            <Form.Group className="mb-3  mb-lg-0 " controlId="formBasicEmail">
+              <p>200</p>
+            </Form.Group>
+          </Col>
+
+          <Col lg={2}>
             <Form.Group className="mb-3 mb-lg-0" controlId="formBasicEmail">
               <Form.Control
                 {...register('source', {
@@ -56,8 +64,24 @@ const AddFactForm = ({ showForm, setShowForm }) => {
               )}
             </Form.Group>
           </Col>
-
           <Col lg={2}>
+            <Form.Select
+              {...register('category', { required: 'Select a category' })}
+              className="mb-3 mb-lg-0 rounded-pill"
+              aria-label="Default select example"
+            >
+              <option>Choose category</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </Form.Select>
+
+            {errors.category && (
+              <p className="text-danger mb-0">{errors?.category?.message}</p>
+            )}
+          </Col>
+
+          <Col lg={1}>
             <Button
               className="w-100 fw-semibold rounded-pill"
               variant="primary"
