@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Outlet } from 'react-router-dom';
+import SideBar from '../components/Home/SideBar/SideBar';
 
 const Main = () => {
   return (
@@ -12,7 +13,7 @@ const Main = () => {
       <Container>
         <Row>
           <Col sm={4}>
-            <h1>Category</h1>
+            <SideBar></SideBar>
           </Col>
           <Col sm={8}>
             <Outlet></Outlet>
