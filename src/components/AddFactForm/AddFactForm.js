@@ -19,9 +19,9 @@ const AddFactForm = ({ showForm, setShowForm, categories }) => {
 
   return (
     <div className="">
-      <Form onSubmit={handleSubmit(handleAddFact)}>
+      <Form onSubmit={handleSubmit(handleAddFact)} className="fact-form ">
         <Row>
-          <Col lg={6}>
+          <Col lg={5}>
             <Form.Group className="mb-3 mb-lg-0" controlId="formBasicEmail">
               <Form.Control
                 {...register('fact', {
@@ -29,7 +29,7 @@ const AddFactForm = ({ showForm, setShowForm, categories }) => {
                 })}
                 type="text"
                 placeholder="Share a fact with the world..."
-                className="rounded-pill"
+                className="rounded-pill fact-field"
               />
 
               {errors.fact && (
@@ -38,9 +38,9 @@ const AddFactForm = ({ showForm, setShowForm, categories }) => {
             </Form.Group>
           </Col>
 
-          <Col lg={1}>
+          <Col lg={1} className="d-flex align-items-center">
             <Form.Group className="mb-3  mb-lg-0 " controlId="formBasicEmail">
-              <p>200</p>
+              <p className="letter-count">200</p>
             </Form.Group>
           </Col>
 
@@ -52,7 +52,7 @@ const AddFactForm = ({ showForm, setShowForm, categories }) => {
                 })}
                 type="text"
                 placeholder="Trustworthy source"
-                className="rounded-pill"
+                className="rounded-pill fact-field"
               />
 
               {errors.source && (
@@ -63,7 +63,7 @@ const AddFactForm = ({ showForm, setShowForm, categories }) => {
           <Col lg={2}>
             <Form.Select
               {...register('category', { required: 'Select a category' })}
-              className="mb-3 mb-lg-0 rounded-pill"
+              className="mb-3 mb-lg-0 rounded-pill fact-field"
               aria-label="Default select example"
             >
               <option>Choose category</option>
@@ -80,7 +80,7 @@ const AddFactForm = ({ showForm, setShowForm, categories }) => {
             )}
           </Col>
 
-          <Col lg={1}>
+          <Col lg={2}>
             <Button
               className="w-100 border-0 outline-0 btn-post rounded-pill"
               variant="primary"

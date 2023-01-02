@@ -1,9 +1,40 @@
+.fact-form {
+  background-color: #44403c;
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  margin-bottom: 2.5rem;
+}
+
+.fact-field {
+  padding: 0.9rem 0.8rem;
+  border: 0;
+  outline: 0;
+  background-color: #737373;
+  color: #fafaf9;
+  font-family: 'Sono', sans-serif;
+}
+
+.fact-field:focus {
+  background-color: #737373;
+  color: #fafaf9;
+}
+
+.fact-field::placeholder {
+  color: #d6d3d1;
+}
+
+.letter-count {
+  color: #fafaf9;
+  font-family: 'Sono', sans-serif;
+  margin-bottom: 0;
+}
+
 .btn-post {
-  color: #fff;
+  color: #fafaf9;
   font-weight: 900;
   font-family: 'Coiny', sans-serif;
   letter-spacing: 1px;
-  padding: 0.8rem 1rem;
+  padding: 1rem 1rem 0.8rem;
   background: rgb(59, 130, 246);
   background: linear-gradient(
     132deg,
@@ -19,9 +50,9 @@
 }
 
 .btn-post:hover {
-  color: #fff;
+  color: #fafaf9;
 }
 
 .btn-post:active {
-  color: #fff;
+  color: #fafaf9;
 }

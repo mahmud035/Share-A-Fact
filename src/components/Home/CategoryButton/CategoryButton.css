@@ -1,7 +1,11 @@
 .category-button {
+  font-size: 14px;
   font-weight: 600;
   width: 200px;
-  padding: 0.6rem 1rem;
+  padding: 0.7rem 1rem 0.5rem;
+  font-family: 'Coiny', sans-serif;
+  letter-spacing: 1px;
+  color: #fafaf9;
 }
 
 .category-button.all {

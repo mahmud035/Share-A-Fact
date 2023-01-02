@@ -7,12 +7,12 @@
 }
 
 .fact-btn {
-  color: #fff;
+  color: #fafaf9;
   font-weight: 900;
   font-family: 'Coiny', sans-serif;
   letter-spacing: 1px;
   width: 200px;
-  padding: 0.8rem 1rem;
+  padding: 1rem 1rem 0.8rem;
   background: rgb(59, 130, 246);
   background: linear-gradient(
     132deg,
@@ -28,11 +28,11 @@
 }
 
 .fact-btn:hover {
-  color: #fff;
+  color: #fafaf9;
 }
 
 .fact-btn:active {
-  color: #fff;
+  color: #fafaf9;
 }
 
 @media (max-width: 575px) {

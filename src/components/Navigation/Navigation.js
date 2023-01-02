@@ -37,7 +37,7 @@ const Navigation = () => {
 
   return (
     <div>
-      <Navbar collapseOnSelect expand="lg" className="py-4">
+      <Navbar collapseOnSelect expand="lg" className="pt-4 pb-3">
         <Container>
           <Navbar.Brand href="/" className="navbar-brand">
             TODAY I LEARNED
@@ -58,7 +58,7 @@ const Navigation = () => {
         </Container>
       </Navbar>
 
-      <div className="container pt-5">
+      <div className="container pt-4">
         {showForm && (
           <AddFactForm
             showForm={showForm}
