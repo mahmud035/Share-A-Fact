@@ -6,6 +6,10 @@
   font-family: 'Coiny', sans-serif;
 }
 
+.navbar-brand:hover {
+  color: #fafaf9;
+}
+
 .fact-btn {
   color: #fafaf9;
   font-weight: 900;
@@ -38,5 +42,34 @@
 @media (max-width: 575px) {
   .fact-btn {
     width: 150px;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-brand {
+    font-size: 24px;
+  }
+  .fact-btn {
+    padding: 0.6rem 1rem 0.4rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .navbar-brand {
+    font-size: 20px;
+  }
+  .fact-btn {
+    width: 170px;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar-brand {
+    font-size: 16px;
+  }
+  .fact-btn {
+    width: 165px;
+    font-weight: 700;
+    padding: 1rem 0.5rem 0.8rem;
   }
 }
