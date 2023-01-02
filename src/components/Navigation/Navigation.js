@@ -50,6 +50,7 @@ const Navigation = () => {
                 }}
                 variant="info"
                 className="rounded-pill border-0 outline-0 fact-btn"
+                style={{ color: '#fafaf9' }}
               >
                 {showForm ? 'CLOSE' : 'SHARE A FACT'}
               </Button>
