@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Col, Form, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
 
 import './AddFactForm.css';
 
@@ -14,7 +15,39 @@ const AddFactForm = ({ showForm, setShowForm, categories }) => {
   const handleAddFact = (data) => {
     setShowForm(false);
 
-    console.log(data);
+    const factObj = {
+      factText: data.fact,
+      source: data.source,
+      category: data.category,
+      likeCount: 0,
+      mindBlowingCount: 0,
+      dislikeCount: 0,
+    };
+
+    fetch('http://localhost:5000/facts', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(factObj),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          Swal.fire({
+            title: 'Success',
+            text: 'Fact added successfully',
+            icon: 'success',
+            confirmButtonText: 'Ok',
+          });
+        }
+      })
+      .catch((error) => {
+        Swal.fire({
+          title: 'Error!',
+          text: { error },
+          icon: 'error',
+          confirmButtonText: 'Ok',
+        });
+      });
   };
 
   return (
