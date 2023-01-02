@@ -1,9 +1,10 @@
 import React from 'react';
 import { Button, Col, Form, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
+
 import './AddFactForm.css';
 
-const AddFactForm = ({ showForm, setShowForm }) => {
+const AddFactForm = ({ showForm, setShowForm, categories }) => {
   const {
     register,
     formState: { errors },
@@ -18,12 +19,7 @@ const AddFactForm = ({ showForm, setShowForm }) => {
 
   return (
     <div className="">
-      <Form
-        onSubmit={handleSubmit(handleAddFact)}
-        className="homepage-form"
-        data-aos="fade-down"
-        data-aos-duration="1000"
-      >
+      <Form onSubmit={handleSubmit(handleAddFact)}>
         <Row>
           <Col lg={6}>
             <Form.Group className="mb-3 mb-lg-0" controlId="formBasicEmail">
@@ -71,9 +67,12 @@ const AddFactForm = ({ showForm, setShowForm }) => {
               aria-label="Default select example"
             >
               <option>Choose category</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+
+              {categories.map((category, index) => (
+                <option key={index} value={category?.category}>
+                  {category?.category}
+                </option>
+              ))}
             </Form.Select>
 
             {errors.category && (
