@@ -5,7 +5,18 @@
 }
 
 .category-button.all {
-  background-color: aqua;
+  background: rgb(59, 130, 246);
+  background: linear-gradient(
+    132deg,
+    rgba(59, 130, 246, 1) 0%,
+    rgba(139, 92, 246, 1) 11%,
+    rgba(239, 68, 68, 1) 32%,
+    rgba(219, 39, 119, 1) 32%,
+    rgba(22, 163, 74, 1) 59%,
+    rgba(20, 184, 166, 1) 72%,
+    rgba(249, 115, 22, 1) 93%,
+    rgba(234, 179, 8, 1) 100%
+  );
 }
 
 .category-button.technology {
@@ -19,18 +30,23 @@
 .category-button.finance {
   background-color: #ef4444;
 }
+
 .category-button.society {
   background-color: #eab308;
 }
+
 .category-button.entertainment {
   background-color: #db2777;
 }
+
 .category-button.health {
   background-color: #14b8a6;
 }
+
 .category-button.history {
   background-color: #f97316;
 }
+
 .category-button.news {
   background-color: #8b5cf6;
 }
