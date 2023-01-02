@@ -1,0 +1,36 @@
+.category-button {
+  font-weight: 600;
+  width: 200px;
+  padding: 0.6rem 1rem;
+}
+
+.category-button.all {
+  background-color: aqua;
+}
+
+.category-button.technology {
+  background-color: #3b82f6;
+}
+
+.category-button.science {
+  background-color: #16a34a;
+}
+
+.category-button.finance {
+  background-color: #ef4444;
+}
+.category-button.society {
+  background-color: #eab308;
+}
+.category-button.entertainment {
+  background-color: #db2777;
+}
+.category-button.health {
+  background-color: #14b8a6;
+}
+.category-button.history {
+  background-color: #f97316;
+}
+.category-button.news {
+  background-color: #8b5cf6;
+}

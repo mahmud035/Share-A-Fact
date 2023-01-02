@@ -29,12 +29,12 @@ const SideBar = () => {
     return <h3>{error.message}</h3>;
   }
 
-  console.log(categories);
+  // console.log(categories);
 
   return (
     <div>
-      {categories.map((category, index) => (
-        <CategoryButton category={category} key={index}></CategoryButton>
+      {categories.map((categoryObj, index) => (
+        <CategoryButton categoryObj={categoryObj} key={index}></CategoryButton>
       ))}
     </div>
   );
