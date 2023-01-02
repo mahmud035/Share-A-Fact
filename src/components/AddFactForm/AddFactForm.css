@@ -1,6 +1,8 @@
 .btn-post {
   color: #fff;
   font-weight: 900;
+  font-family: 'Coiny', sans-serif;
+  letter-spacing: 1px;
   padding: 0.8rem 1rem;
   background: rgb(59, 130, 246);
   background: linear-gradient(

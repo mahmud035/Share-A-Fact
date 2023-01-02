@@ -37,9 +37,11 @@ const Navigation = () => {
 
   return (
     <div>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar collapseOnSelect expand="lg" className="py-4">
         <Container>
-          <Navbar.Brand href="#home">TODAY I LEARNED</Navbar.Brand>
+          <Navbar.Brand href="/" className="navbar-brand">
+            TODAY I LEARNED
+          </Navbar.Brand>
           <Nav className="ms-auto">
             <Nav.Link>
               <Button
