@@ -47,7 +47,7 @@ const Navigation = () => {
                   setShowForm(!showForm);
                 }}
                 variant="info"
-                className="rounded-pill"
+                className="rounded-pill border-0 outline-0 fact-btn"
               >
                 {showForm ? 'CLOSE' : 'SHARE A FACT'}
               </Button>

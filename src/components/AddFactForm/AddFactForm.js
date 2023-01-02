@@ -82,7 +82,7 @@ const AddFactForm = ({ showForm, setShowForm, categories }) => {
 
           <Col lg={1}>
             <Button
-              className="w-100 fw-semibold rounded-pill"
+              className="w-100 border-0 outline-0 btn-post rounded-pill"
               variant="primary"
               type="submit"
             >

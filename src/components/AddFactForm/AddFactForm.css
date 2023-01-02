@@ -1,0 +1,25 @@
+.btn-post {
+  color: #fff;
+  font-weight: 900;
+  padding: 0.8rem 1rem;
+  background: rgb(59, 130, 246);
+  background: linear-gradient(
+    132deg,
+    rgba(59, 130, 246, 1) 0%,
+    rgba(139, 92, 246, 1) 11%,
+    rgba(239, 68, 68, 1) 32%,
+    rgba(219, 39, 119, 1) 32%,
+    rgba(22, 163, 74, 1) 59%,
+    rgba(20, 184, 166, 1) 72%,
+    rgba(249, 115, 22, 1) 93%,
+    rgba(234, 179, 8, 1) 100%
+  );
+}
+
+.btn-post:hover {
+  color: #fff;
+}
+
+.btn-post:active {
+  color: #fff;
+}
