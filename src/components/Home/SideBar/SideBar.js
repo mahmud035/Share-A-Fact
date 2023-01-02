@@ -1,7 +1,8 @@
-import React from 'react';
-import './SideBar.css';
 import { useQuery } from '@tanstack/react-query';
+import React from 'react';
 import Loading from '../../Shared/Loading/Loading';
+import CategoryButton from '../CategoryButton/CategoryButton';
+import './SideBar.css';
 
 const SideBar = () => {
   const url = 'http://localhost:5000/categories';
@@ -32,7 +33,9 @@ const SideBar = () => {
 
   return (
     <div>
-      <h1>Side Bar: {categories.length}</h1>
+      {categories.map((category, index) => (
+        <CategoryButton category={category} key={index}></CategoryButton>
+      ))}
     </div>
   );
 };
