@@ -39,8 +39,6 @@ const CategoryFactCard = () => {
     });
   }
 
-  console.table(categoryFacts);
-
   return (
     <div>
       <div className="fact-card-container">

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Col, Form, Row } from 'react-bootstrap';
-import { useForm } from 'react-hook-form';
+import { useForm, useWatch } from 'react-hook-form';
 import Swal from 'sweetalert2';
 
 import './AddFactForm.css';
@@ -10,7 +10,31 @@ const AddFactForm = ({ showForm, setShowForm, categories }) => {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm();
+    control,
+  } = useForm({
+    defaultValues: {
+      fact: '',
+      source: ' ',
+      category: 'TECHNOLOGY',
+    },
+  });
+
+  const factText = useWatch({
+    control,
+    name: 'fact',
+  });
+
+  // console.log(factText);
+  // console.log(factText.length);
+
+  if (factText.length > 200) {
+    Swal.fire({
+      title: 'Error!',
+      text: 'Your fact should be within 200 characters.',
+      icon: 'error',
+      confirmButtonText: 'Ok',
+    });
+  }
 
   const handleAddFact = (data) => {
     setShowForm(false);
@@ -73,7 +97,7 @@ const AddFactForm = ({ showForm, setShowForm, categories }) => {
 
           <Col lg={1} className="d-flex align-items-center">
             <Form.Group className="mb-3  mb-lg-0 " controlId="formBasicEmail">
-              <p className="letter-count">200</p>
+              <p className="letter-count">{200 - factText.length}</p>
             </Form.Group>
           </Col>
 
