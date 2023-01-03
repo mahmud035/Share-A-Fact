@@ -52,6 +52,25 @@ const FactCard = ({ fact, refetch }) => {
       });
   };
 
+  const handleDislikeCount = (id) => {
+    const dislikeCountObj = { dislikeCount };
+
+    fetch(`http://localhost:5000/facts/dislikeCount/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(dislikeCountObj),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount) {
+          refetch();
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <Card className="fact-card">
       <Card.Body>
@@ -86,7 +105,10 @@ const FactCard = ({ fact, refetch }) => {
                 <span className="emoji">😍</span>{' '}
                 <strong>{mindBlowingCount}</strong>
               </p>
-              <p className="mb-0 rounded-pill">
+              <p
+                onClick={() => handleDislikeCount(_id)}
+                className="mb-0 rounded-pill"
+              >
                 <span className="emoji">⛔</span>{' '}
                 <strong>{dislikeCount}</strong>
               </p>
