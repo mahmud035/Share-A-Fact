@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 const CategoryButtonSmall = ({ category }) => {
   return (
     <Button
-      className={`rounded-pill mb-3 border-0 outline-0 category-button btn-small ${
+      className={`rounded-pill border-0 outline-0 category-button btn-small ${
         category === 'ALL' ? 'all' : undefined
       } ${category === 'TECHNOLOGY' ? 'technology' : undefined} ${
         category === 'SCIENCE' ? 'science' : undefined

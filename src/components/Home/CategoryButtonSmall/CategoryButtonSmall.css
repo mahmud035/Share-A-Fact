@@ -1,4 +1,5 @@
 .btn-small {
-  width: fit-content;
-  padding: 0.3rem 0.8rem 0.1rem;
+  font-size: 11.6px !important;
+  width: fit-content !important;
+  padding: 0.25rem 0.8rem 0rem !important;
 }
