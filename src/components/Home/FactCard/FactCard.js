@@ -15,14 +15,31 @@ const FactCard = ({ fact, refetch }) => {
   } = fact;
 
   const handleLikeCount = (id) => {
-    console.log(id);
-
     const likeCountObj = { likeCount };
 
     fetch(`http://localhost:5000/facts/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(likeCountObj),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount) {
+          refetch();
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleMindBlowingCount = (id) => {
+    const mindBlowingCountObj = { mindBlowingCount };
+
+    fetch(`http://localhost:5000/facts/mindBlowing/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(mindBlowingCountObj),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -62,7 +79,10 @@ const FactCard = ({ fact, refetch }) => {
               >
                 <span className="emoji">👍</span> <strong>{likeCount}</strong>
               </p>
-              <p className="mb-0 rounded-pill">
+              <p
+                onClick={() => handleMindBlowingCount(_id)}
+                className="mb-0 rounded-pill"
+              >
                 <span className="emoji">😍</span>{' '}
                 <strong>{mindBlowingCount}</strong>
               </p>
