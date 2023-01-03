@@ -1,10 +1,10 @@
 import React from 'react';
-import Navigation from '../components/Navigation/Navigation';
+import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import { Outlet } from 'react-router-dom';
+import Home from '../components/Home/Home/Home';
 import SideBar from '../components/Home/SideBar/SideBar';
+import Navigation from '../components/Navigation/Navigation';
 
 const Main = () => {
   return (
@@ -16,7 +16,7 @@ const Main = () => {
             <SideBar></SideBar>
           </Col>
           <Col sm={8}>
-            <Outlet></Outlet>
+            <Home></Home>
           </Col>
         </Row>
       </Container>
