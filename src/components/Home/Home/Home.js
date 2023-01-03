@@ -39,10 +39,8 @@ const Home = () => {
   console.log(facts);
 
   return (
-    <div className="text-white">
-      <h1>Home Component</h1>
-
-      <div>
+    <div className="">
+      <div className="fact-card-container">
         {facts.map((fact, index) => (
           <FactCard key={index} fact={fact}></FactCard>
         ))}
