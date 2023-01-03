@@ -37,7 +37,7 @@ const Home = () => {
   }
 
   return (
-    <div className="">
+    <div>
       <div className="fact-card-container">
         {facts.map((fact, index) => (
           <FactCard key={index} fact={fact} refetch={refetch}></FactCard>

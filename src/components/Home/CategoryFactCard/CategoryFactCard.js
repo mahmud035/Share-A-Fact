@@ -8,7 +8,6 @@ import './CategoryFactCard.css';
 
 const CategoryFactCard = () => {
   const { categoryName } = useParams();
-  console.log(categoryName);
 
   const url = `http://localhost:5000/categories/${categoryName}`;
 
@@ -44,8 +43,6 @@ const CategoryFactCard = () => {
 
   return (
     <div>
-      <h1 className="text-white">Hello</h1>
-
       <div className="fact-card-container">
         {categoryFacts.map((fact, index) => (
           <FactCard key={index} fact={fact} refetch={refetch}></FactCard>
