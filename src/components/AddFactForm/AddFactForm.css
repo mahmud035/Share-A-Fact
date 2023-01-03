@@ -9,13 +9,13 @@
   padding: 0.9rem 0.8rem;
   border: 0;
   outline: 0;
-  background-color: #737373;
+  background-color: #78716c;
   color: #fafaf9;
   font-family: 'Sono', sans-serif;
 }
 
 .fact-field:focus {
-  background-color: #737373;
+  background-color: #78716c;
   color: #fafaf9;
 }
 
