@@ -1,7 +1,11 @@
+import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { Button, Col, Form, Row } from 'react-bootstrap';
 import { useForm, useWatch } from 'react-hook-form';
 import Swal from 'sweetalert2';
+import FactCard from '../Home/FactCard/FactCard';
+import Home from '../Home/Home/Home';
+import Loading from '../Shared/Loading/Loading';
 
 import './AddFactForm.css';
 
@@ -14,8 +18,6 @@ const AddFactForm = ({ showForm, setShowForm, categories }) => {
   } = useForm({
     defaultValues: {
       fact: '',
-      source: ' ',
-      category: 'TECHNOLOGY',
     },
   });
 
@@ -23,9 +25,6 @@ const AddFactForm = ({ showForm, setShowForm, categories }) => {
     control,
     name: 'fact',
   });
-
-  // console.log(factText);
-  // console.log(factText.length);
 
   if (factText.length > 200) {
     Swal.fire({
@@ -35,6 +34,37 @@ const AddFactForm = ({ showForm, setShowForm, categories }) => {
       confirmButtonText: 'Ok',
     });
   }
+
+  // Use TanStack Query for re-fetching facts data
+  // const url = 'http://localhost:5000/facts';
+
+  // const {
+  //   isLoading,
+  //   isError,
+  //   data: facts = [],
+  //   error,
+  //   refetch,
+  // } = useQuery({
+  //   queryKey: ['facts'],
+  //   queryFn: async () => {
+  //     const res = await fetch(url);
+  //     const data = await res.json();
+  //     return data;
+  //   },
+  // });
+
+  // if (isLoading) {
+  //   return <Loading></Loading>;
+  // }
+
+  // if (isError) {
+  //   return Swal.fire({
+  //     title: 'Error!',
+  //     text: { error },
+  //     icon: 'error',
+  //     confirmButtonText: 'Ok',
+  //   });
+  // }
 
   const handleAddFact = (data) => {
     setShowForm(false);
@@ -56,6 +86,7 @@ const AddFactForm = ({ showForm, setShowForm, categories }) => {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
+          <Home></Home>;
           Swal.fire({
             title: 'Success',
             text: 'Fact added successfully',
@@ -126,8 +157,14 @@ const AddFactForm = ({ showForm, setShowForm, categories }) => {
               <option>Choose category</option>
 
               {categories.map((category, index) => (
-                <option key={index} value={category?.category}>
-                  {category?.category}
+                <option
+                  key={index}
+                  value={category?.category}
+                  className={`${
+                    category.category === 'ALL' ? 'hide' : undefined
+                  }`}
+                >
+                  {category?.category !== 'ALL' && `${category?.category}`}
                 </option>
               ))}
             </Form.Select>
