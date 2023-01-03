@@ -29,6 +29,10 @@
   margin-bottom: 0;
 }
 
+.hide {
+  display: none;
+}
+
 .btn-post {
   color: #fafaf9;
   font-weight: 900;

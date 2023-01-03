@@ -1,7 +1,11 @@
+import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { Button, Col, Form, Row } from 'react-bootstrap';
-import { useForm } from 'react-hook-form';
+import { useForm, useWatch } from 'react-hook-form';
 import Swal from 'sweetalert2';
+import FactCard from '../Home/FactCard/FactCard';
+import Home from '../Home/Home/Home';
+import Loading from '../Shared/Loading/Loading';
 
 import './AddFactForm.css';
 
@@ -10,7 +14,57 @@ const AddFactForm = ({ showForm, setShowForm, categories }) => {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm();
+    control,
+  } = useForm({
+    defaultValues: {
+      fact: '',
+    },
+  });
+
+  const factText = useWatch({
+    control,
+    name: 'fact',
+  });
+
+  if (factText.length > 200) {
+    Swal.fire({
+      title: 'Error!',
+      text: 'Your fact should be within 200 characters.',
+      icon: 'error',
+      confirmButtonText: 'Ok',
+    });
+  }
+
+  // Use TanStack Query for re-fetching facts data
+  // const url = 'http://localhost:5000/facts';
+
+  // const {
+  //   isLoading,
+  //   isError,
+  //   data: facts = [],
+  //   error,
+  //   refetch,
+  // } = useQuery({
+  //   queryKey: ['facts'],
+  //   queryFn: async () => {
+  //     const res = await fetch(url);
+  //     const data = await res.json();
+  //     return data;
+  //   },
+  // });
+
+  // if (isLoading) {
+  //   return <Loading></Loading>;
+  // }
+
+  // if (isError) {
+  //   return Swal.fire({
+  //     title: 'Error!',
+  //     text: { error },
+  //     icon: 'error',
+  //     confirmButtonText: 'Ok',
+  //   });
+  // }
 
   const handleAddFact = (data) => {
     setShowForm(false);
@@ -32,6 +86,7 @@ const AddFactForm = ({ showForm, setShowForm, categories }) => {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
+          <Home></Home>;
           Swal.fire({
             title: 'Success',
             text: 'Fact added successfully',
@@ -73,7 +128,7 @@ const AddFactForm = ({ showForm, setShowForm, categories }) => {
 
           <Col lg={1} className="d-flex align-items-center">
             <Form.Group className="mb-3  mb-lg-0 " controlId="formBasicEmail">
-              <p className="letter-count">200</p>
+              <p className="letter-count">{200 - factText.length}</p>
             </Form.Group>
           </Col>
 
@@ -102,8 +157,14 @@ const AddFactForm = ({ showForm, setShowForm, categories }) => {
               <option>Choose category</option>
 
               {categories.map((category, index) => (
-                <option key={index} value={category?.category}>
-                  {category?.category}
+                <option
+                  key={index}
+                  value={category?.category}
+                  className={`${
+                    category.category === 'ALL' ? 'hide' : undefined
+                  }`}
+                >
+                  {category?.category !== 'ALL' && `${category?.category}`}
                 </option>
               ))}
             </Form.Select>
