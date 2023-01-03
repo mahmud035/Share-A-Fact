@@ -36,13 +36,11 @@ const Home = () => {
     });
   }
 
-  console.log(facts);
-
   return (
     <div className="">
       <div className="fact-card-container">
         {facts.map((fact, index) => (
-          <FactCard key={index} fact={fact}></FactCard>
+          <FactCard key={index} fact={fact} refetch={refetch}></FactCard>
         ))}
       </div>
     </div>
