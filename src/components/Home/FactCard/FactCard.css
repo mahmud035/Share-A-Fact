@@ -1,0 +1,26 @@
+.fact-card {
+  background-color: #44403c;
+  color: #fafaf9;
+  font-family: 'Sono', sans-serif;
+  font-size: 17px;
+  padding: 0.5rem;
+  border-radius: 16px;
+}
+
+.source {
+  color: #a3a3a3;
+  text-decoration: none;
+}
+
+.source:hover {
+  color: #d4d4d4;
+}
+
+.interaction-count-container > p {
+  background-color: #78716c;
+  padding: 0.2rem 0.8rem;
+}
+
+.emoji {
+  cursor: pointer;
+}

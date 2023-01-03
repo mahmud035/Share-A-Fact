@@ -1,21 +1,24 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-import './Home.css';
-import Loading from '../../Shared/Loading/Loading';
+import { useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import Loading from '../../Shared/Loading/Loading';
 import FactCard from '../FactCard/FactCard';
+import './CategoryFactCard.css';
 
-const Home = () => {
-  const url = 'http://localhost:5000/facts';
+const CategoryFactCard = () => {
+  const { categoryName } = useParams();
+
+  const url = `http://localhost:5000/categories/${categoryName}`;
 
   const {
     isLoading,
     isError,
-    data: facts = [],
+    data: categoryFacts = [],
     error,
     refetch,
   } = useQuery({
-    queryKey: ['facts'],
+    queryKey: ['categories', categoryName],
     queryFn: async () => {
       const res = await fetch(url);
       const data = await res.json();
@@ -36,10 +39,12 @@ const Home = () => {
     });
   }
 
+  console.table(categoryFacts);
+
   return (
     <div>
       <div className="fact-card-container">
-        {facts.map((fact, index) => (
+        {categoryFacts.map((fact, index) => (
           <FactCard key={index} fact={fact} refetch={refetch}></FactCard>
         ))}
       </div>
@@ -47,4 +52,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default CategoryFactCard;

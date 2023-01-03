@@ -4,6 +4,7 @@ import { Button } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
 import AddFactForm from '../AddFactForm/AddFactForm';
 import Loading from '../Shared/Loading/Loading';
 import './Navigation.css';
@@ -39,9 +40,11 @@ const Navigation = () => {
     <div>
       <Navbar collapseOnSelect expand="lg" className="pt-4 pb-3">
         <Container>
-          <Navbar.Brand href="/" className="navbar-brand">
-            TODAY I LEARNED
-          </Navbar.Brand>
+          <Link to="/" className="text-decoration-none">
+            <Navbar.Brand className="navbar-brand">
+              TODAY I LEARNED
+            </Navbar.Brand>
+          </Link>
           <Nav className="ms-auto">
             <Nav.Link>
               <Button

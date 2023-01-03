@@ -8,6 +8,10 @@
   color: #fafaf9;
 }
 
+.category-button.hide {
+  display: none;
+}
+
 .category-button.all {
   background: rgb(59, 130, 246);
   background: linear-gradient(
