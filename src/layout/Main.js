@@ -2,7 +2,7 @@ import React from 'react';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Home from '../components/Home/Home/Home';
+import { Outlet } from 'react-router-dom';
 import SideBar from '../components/Home/SideBar/SideBar';
 import Navigation from '../components/Navigation/Navigation';
 
@@ -16,7 +16,7 @@ const Main = () => {
             <SideBar></SideBar>
           </Col>
           <Col sm={8}>
-            <Home></Home>
+            <Outlet></Outlet>
           </Col>
         </Row>
       </Container>
