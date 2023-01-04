@@ -2,4 +2,11 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
+  padding-bottom: 2rem;
+}
+
+.fact-card-no-info {
+  color: #fafaf9;
+  font-family: 'Sono', sans-serif;
+  font-size: 15px;
 }

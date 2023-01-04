@@ -76,7 +76,7 @@ const FactCard = ({ fact, refetch }) => {
       <Card.Body>
         <div className="d-flex flex-column gap-3">
           <div>
-            <span className="mb-0">{factText}</span>
+            <span className="mb-0">{factText}</span>&nbsp;
             <a
               className="source"
               href={source}

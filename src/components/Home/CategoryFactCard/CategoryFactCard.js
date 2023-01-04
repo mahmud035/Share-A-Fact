@@ -46,6 +46,12 @@ const CategoryFactCard = () => {
           <FactCard key={index} fact={fact} refetch={refetch}></FactCard>
         ))}
       </div>
+
+      <p className="fact-card-no-info">
+        There are {categoryFacts.length}&nbsp;
+        {categoryFacts.length <= 1 ? 'fact' : 'facts'} in the database. Add your
+        own!
+      </p>
     </div>
   );
 };
