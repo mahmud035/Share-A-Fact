@@ -74,9 +74,9 @@ const FactCard = ({ fact, refetch }) => {
   return (
     <Card className="fact-card">
       <Card.Body>
-        <div className="d-flex flex-column flex-lg-row gap-3 align-items-lg-center ">
-          <div className="d-flex gap-3 ">
-            <p className="mb-0">{factText}</p>
+        <div className="d-flex flex-column gap-3">
+          <div>
+            <span className="mb-0">{factText}</span>
             <a
               className="source"
               href={source}
@@ -86,7 +86,7 @@ const FactCard = ({ fact, refetch }) => {
               (Source)
             </a>
           </div>
-          <div className="w-100 d-flex flex-column justify-content-end align-items-end flex-lg-row justify-content-lg-between align-items-lg-center gap-3">
+          <div className=" d-flex flex-column justify-content-end align-items-end  gap-3">
             <CategoryButtonSmall
               key={_id}
               category={category}
