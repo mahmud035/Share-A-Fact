@@ -9,7 +9,7 @@ const CategoryButton = ({ categoryObj }) => {
 
   return (
     <div>
-      <Link to={`/category/${category}`}>
+      <Link to={`/category/${category}`} className="text-decoration-none">
         <Button
           className={`rounded-pill mb-3 border-0 outline-0 category-button ${
             category === 'ALL' ? 'hide' : undefined
