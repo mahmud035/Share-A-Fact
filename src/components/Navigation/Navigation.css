@@ -17,6 +17,7 @@
   letter-spacing: 1px;
   width: 200px;
   padding: 1rem 1rem 0.8rem;
+  transition: all 0.35s ease-in-out;
   background: rgb(59, 130, 246);
   background: linear-gradient(
     132deg,
@@ -33,6 +34,7 @@
 
 .fact-btn:hover {
   color: #fafaf9;
+  transform: skewY(-3deg);
 }
 
 .fact-btn:active {

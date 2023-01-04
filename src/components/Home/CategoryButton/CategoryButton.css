@@ -9,6 +9,11 @@
   letter-spacing: 1px;
   color: #fafaf9;
   text-decoration: none;
+  transition: all 0.35s ease-in-out;
+}
+
+.category-button:hover {
+  transform: skewY(-1.5deg);
 }
 
 .category-button.hide {
