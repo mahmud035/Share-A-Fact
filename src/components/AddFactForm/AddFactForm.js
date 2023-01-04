@@ -46,7 +46,7 @@ const AddFactForm = ({ setShowForm, categories }) => {
       dislikeCount: 0,
     };
 
-    fetch('http://localhost:5000/facts', {
+    fetch('https://share-a-fact-server.vercel.app/facts', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(factObj),

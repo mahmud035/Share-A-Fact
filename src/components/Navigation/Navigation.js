@@ -12,7 +12,7 @@ import './Navigation.css';
 const Navigation = () => {
   const [showForm, setShowForm] = useState(false);
 
-  const url = 'http://localhost:5000/categories';
+  const url = 'https://share-a-fact-server.vercel.app/categories';
 
   const {
     isLoading,

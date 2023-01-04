@@ -6,7 +6,7 @@ import Loading from '../../components/Shared/Loading/Loading';
 export const FactContext = createContext();
 
 const FactProvider = ({ children }) => {
-  const url = 'http://localhost:5000/facts';
+  const url = 'https://share-a-fact-server.vercel.app/facts';
 
   const {
     isLoading,

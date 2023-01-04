@@ -9,7 +9,7 @@ import './CategoryFactCard.css';
 const CategoryFactCard = () => {
   const { categoryName } = useParams();
 
-  const url = `http://localhost:5000/categories/${categoryName}`;
+  const url = `https://share-a-fact-server.vercel.app/categories/${categoryName}`;
 
   const {
     isLoading,

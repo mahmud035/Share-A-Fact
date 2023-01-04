@@ -5,7 +5,7 @@ import CategoryButton from '../CategoryButton/CategoryButton';
 import './SideBar.css';
 
 const SideBar = () => {
-  const url = 'http://localhost:5000/categories';
+  const url = 'https://share-a-fact-server.vercel.app/categories';
 
   const {
     isLoading,

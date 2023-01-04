@@ -17,7 +17,7 @@ const FactCard = ({ fact, refetch }) => {
   const handleLikeCount = (id) => {
     const likeCountObj = { likeCount };
 
-    fetch(`http://localhost:5000/facts/${id}`, {
+    fetch(`https://share-a-fact-server.vercel.app/facts/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(likeCountObj),
@@ -36,7 +36,7 @@ const FactCard = ({ fact, refetch }) => {
   const handleMindBlowingCount = (id) => {
     const mindBlowingCountObj = { mindBlowingCount };
 
-    fetch(`http://localhost:5000/facts/mindBlowing/${id}`, {
+    fetch(`https://share-a-fact-server.vercel.app/facts/mindBlowing/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(mindBlowingCountObj),
@@ -55,7 +55,7 @@ const FactCard = ({ fact, refetch }) => {
   const handleDislikeCount = (id) => {
     const dislikeCountObj = { dislikeCount };
 
-    fetch(`http://localhost:5000/facts/dislikeCount/${id}`, {
+    fetch(`https://share-a-fact-server.vercel.app/facts/dislikeCount/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(dislikeCountObj),
