@@ -1,40 +1,10 @@
-import { useQuery } from '@tanstack/react-query';
-import React from 'react';
-import './Home.css';
-import Loading from '../../Shared/Loading/Loading';
-import Swal from 'sweetalert2';
+import React, { useContext } from 'react';
+import { FactContext } from '../../../context/FactProvider/FactProvider';
 import FactCard from '../FactCard/FactCard';
+import './Home.css';
 
 const Home = () => {
-  const url = 'http://localhost:5000/facts';
-
-  const {
-    isLoading,
-    isError,
-    data: facts = [],
-    error,
-    refetch,
-  } = useQuery({
-    queryKey: ['facts'],
-    queryFn: async () => {
-      const res = await fetch(url);
-      const data = await res.json();
-      return data;
-    },
-  });
-
-  if (isLoading) {
-    return <Loading></Loading>;
-  }
-
-  if (isError) {
-    return Swal.fire({
-      title: 'Error!',
-      text: { error },
-      icon: 'error',
-      confirmButtonText: 'Ok',
-    });
-  }
+  const { facts, refetch } = useContext(FactContext);
 
   return (
     <div>

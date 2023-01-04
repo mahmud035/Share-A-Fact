@@ -65,7 +65,6 @@ const Navigation = () => {
       <div className="container pt-4">
         {showForm && (
           <AddFactForm
-            showForm={showForm}
             setShowForm={setShowForm}
             categories={categories}
           ></AddFactForm>
