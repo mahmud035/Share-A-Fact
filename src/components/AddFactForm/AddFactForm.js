@@ -75,7 +75,12 @@ const AddFactForm = ({ setShowForm, categories }) => {
 
   return (
     <div className="">
-      <Form onSubmit={handleSubmit(handleAddFact)} className="fact-form ">
+      <Form
+        onSubmit={handleSubmit(handleAddFact)}
+        data-aos="fade-down"
+        data-aos-duration="1000"
+        className="fact-form "
+      >
         <Row>
           <Col lg={5}>
             <Form.Group className="mb-3 mb-lg-0" controlId="formBasicEmail">
