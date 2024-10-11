@@ -129,10 +129,10 @@ const AddFactForm = ({ setShowForm, categories }) => {
             >
               <option>Choose category</option>
 
-              {categories.map((category, index) => (
+              {categories.map((category) => (
                 <option
-                  key={index}
-                  value={category?.category}
+                  key={category.category}
+                  value={category.category}
                   className={`${
                     category.category === 'ALL' ? 'hide' : undefined
                   }`}

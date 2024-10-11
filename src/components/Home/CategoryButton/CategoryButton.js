@@ -27,7 +27,7 @@ const CategoryButton = ({ categoryObj }) => {
         </Button>
       </Link>
 
-      {/* If the category is ALL, then it will Navigate to the Home Route ('/'). Otherwise, it will not
+      {/* NOTE: If the category is ALL, then it will Navigate to the Home Route ('/'). Otherwise, it will not
           render the button. */}
 
       {category === 'ALL' && (

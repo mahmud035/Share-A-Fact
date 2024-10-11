@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import Loading from '../../Shared/Loading/Loading';
 import FactCard from '../FactCard/FactCard';
-import './CategoryFactCard.css';
 
 const CategoryFactCard = () => {
   const { categoryName } = useParams();
@@ -42,8 +41,8 @@ const CategoryFactCard = () => {
   return (
     <div>
       <div className="fact-card-container">
-        {categoryFacts.map((fact, index) => (
-          <FactCard key={index} fact={fact} refetch={refetch}></FactCard>
+        {categoryFacts.map((fact) => (
+          <FactCard key={fact._id} fact={fact} refetch={refetch}></FactCard>
         ))}
       </div>
 

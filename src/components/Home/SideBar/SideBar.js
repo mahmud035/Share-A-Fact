@@ -2,7 +2,6 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import Loading from '../../Shared/Loading/Loading';
 import CategoryButton from '../CategoryButton/CategoryButton';
-import './SideBar.css';
 
 const SideBar = () => {
   const url = 'https://share-a-fact-server.vercel.app/categories';
@@ -29,12 +28,13 @@ const SideBar = () => {
     return <h3>{error.message}</h3>;
   }
 
-  // console.log(categories);
-
   return (
     <div>
-      {categories.map((categoryObj, index) => (
-        <CategoryButton categoryObj={categoryObj} key={index}></CategoryButton>
+      {categories.map((categoryObj) => (
+        <CategoryButton
+          key={categoryObj.category}
+          categoryObj={categoryObj}
+        ></CategoryButton>
       ))}
     </div>
   );

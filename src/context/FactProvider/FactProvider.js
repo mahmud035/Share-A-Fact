@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { createContext } from 'react';
+import React, { createContext, useMemo } from 'react';
 import Swal from 'sweetalert2';
 import Loading from '../../components/Shared/Loading/Loading';
 
@@ -23,6 +23,8 @@ const FactProvider = ({ children }) => {
     },
   });
 
+  const value = useMemo(() => ({ facts, refetch }), [facts, refetch]);
+
   if (isLoading) {
     return <Loading></Loading>;
   }
@@ -35,8 +37,6 @@ const FactProvider = ({ children }) => {
       confirmButtonText: 'Ok',
     });
   }
-
-  const value = { facts, refetch };
 
   return <FactContext.Provider value={value}>{children}</FactContext.Provider>;
 };

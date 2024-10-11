@@ -9,8 +9,8 @@ const Home = () => {
   return (
     <div>
       <div className="fact-card-container">
-        {facts.map((fact, index) => (
-          <FactCard key={index} fact={fact} refetch={refetch}></FactCard>
+        {facts.map((fact) => (
+          <FactCard key={fact._id} fact={fact} refetch={refetch}></FactCard>
         ))}
       </div>
 
